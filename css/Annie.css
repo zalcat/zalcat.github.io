@@ -97,14 +97,13 @@ figure {
   display: block;
 }
 html {
-  font-size: 14px;
+  font-size: 16px;
 }
 body {
+  font-family: Ovo, Georgia, STZhongsong, "Microsoft YaHei", serif;
   font-size: 1rem;
   font-weight: normal;
-  color: #c9cacc;
-  background-color: #1d1f21;
-  font-family: "Menlo", "Meslo LG", monospace;
+  color: #555;
   -webkit-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
