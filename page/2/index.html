@@ -233,6 +233,63 @@
 				<div class="post-text">
 					<div class="post-title" id="post-title-index">			
 						
+	<a href="/2020/02/29/python-flask-ssti/" itemprop="url">
+		python-flask(ssti)
+	</a>
+
+					</div>
+
+					<div class="post-content">
+						
+							
+---
+---
+
+0x012020新春公益ctf&emsp;FlaskApp：
+考察点：https://xz.aliyun.com/t/2553
+探测：
+在decode界面可以触发SSTI，提交payload的base64编码即可，base64的编码要在加密端完成。测出题目用的是python3.7环境，可以在本地Fuzz下能用的类。官方给出的面payload可以任意文件读取
+{% for c in [].__class__.__base__.__subclasses__() %}{% if c.__name__=='catch_warnings' %}{{ c.__init__.__g...
+						
+					</div>
+					
+					<div class="post-meta">
+						<span>
+							发布于
+							<i>
+								
+
+
+
+
+
+
+	<a href="/2020/02/29/python-flask-ssti/" itemprop="url">
+		<time datetime="2020-02-29T12:45:56.000Z" itemprop="datePublished">
+	  		2020-02-29
+	  </time>
+	</a> 
+
+							</i>
+						</span>
+						
+						
+
+
+
+						
+							<span class="right">      	
+								<a href="/2020/02/29/python-flask-ssti/" title="阅读全文" external="false">阅读全文</a>	
+							</span>
+						
+					</div>
+				</div>
+			</div>
+		
+			<div class="post" id="post">
+				<div class="post-text">
+					<div class="post-title" id="post-title-index">			
+						
 	<a href="/2020/02/27/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/" itemprop="url">
 		博客搭建记录
 	</a>
