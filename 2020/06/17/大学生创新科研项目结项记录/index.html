@@ -304,10 +304,10 @@
 
     docker build -t pikachu .</code></pre><p>使用当前目录kerfile 创建镜像，命为 pikachu。（要和Dockerfile在同一目录，注意命令后面还有一个点）</p>
 <pre><code>`docker images`</code></pre><p><img src="https://zalcat.oss-cn-hangzhou.aliyuncs.com/blog/20200617165228.png" alt=""></p>
-<h2 id="5-启动容器pikachu"><a href="#5-启动容器pikachu" class="headerlink" title="5.启动容器pikachu"></a>5.启动容器pikachu</h2><pre><code>docker run -it -d -p 7071:80 c877d42ce288</code></pre><p>根据以往的经验教训这里一般不用8082，我换成了7071.</p>
+<h2 id="4-启动容器pikachu"><a href="#4-启动容器pikachu" class="headerlink" title="4.启动容器pikachu"></a>4.启动容器pikachu</h2><pre><code>docker run -it -d -p 7071:80 c877d42ce288</code></pre><p>根据以往的经验教训这里一般不用8082，我换成了7071.</p>
 <p>注意服务器相应的端口防火墙要打开。就可以访问了。</p>
 <p><strong>此时要做的时配置数据库信息，因为使用docker搭建的所以要进容器里面去改，并且xss有一个后台也要配置文件连接数据库</strong></p>
-<h2 id="6-进入容器修改配置文件连接mysql数据库"><a href="#6-进入容器修改配置文件连接mysql数据库" class="headerlink" title="6. 进入容器修改配置文件连接mysql数据库"></a>6. 进入容器修改配置文件连接mysql数据库</h2><pre><code>`docker exec -it fe5e1a289bcc /bin/bash`
+<h2 id="5-进入容器修改配置文件连接mysql数据库"><a href="#5-进入容器修改配置文件连接mysql数据库" class="headerlink" title="5. 进入容器修改配置文件连接mysql数据库"></a>5. 进入容器修改配置文件连接mysql数据库</h2><pre><code>`docker exec -it fe5e1a289bcc /bin/bash`
 
 cd app/inc/ &amp;&amp; vim config.inc.php</code></pre><h2 id="修改后重启容器"><a href="#修改后重启容器" class="headerlink" title="- 修改后重启容器"></a>- 修改后重启容器</h2><pre><code>`docker restart fe5e1a289bc`</code></pre><ul>
 <li><p>Pikachu有一个xss后台，也需要配置文件连接数据库步骤都一样</p>
@@ -318,7 +318,7 @@ cd app/inc/ &amp;&amp; vim config.inc.php</code></pre><h2 id="修改后重启容
 <hr>
 <p>因为要用到数据库mysql，我用小皮面板来安装MySQL</p>
 <p><code>wget -O install.sh https://download.xp.cn/install.sh &amp;&amp; sudo bash install.sh</code></p>
-<h2 id="7-生成镜像方便使用"><a href="#7-生成镜像方便使用" class="headerlink" title="7.生成镜像方便使用"></a>7.生成镜像方便使用</h2><p>我在安装前对pikaqu的前端进行了一点修改，并且我希望这个配置的皮卡丘能更方便使用，所以在最后将其push到阿里云镜像仓库了</p>
+<h2 id="6-生成镜像方便使用"><a href="#6-生成镜像方便使用" class="headerlink" title="6.生成镜像方便使用"></a>6.生成镜像方便使用</h2><p>我在安装前对pikaqu的前端进行了一点修改，并且我希望这个配置的皮卡丘能更方便使用，所以在最后将其push到阿里云镜像仓库了</p>
 	
 		</div>
 		
@@ -360,6 +360,28 @@ cd app/inc/ &amp;&amp; vim config.inc.php</code></pre><h2 id="修改后重启容
 <div class="relate-post">
 	
 		<ul>
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2020/07/07/%E5%9F%BA%E4%BA%8ELayUI%E7%9A%84%E6%96%B0%E9%97%BB%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" title="基于LayUI的新闻管理系统">
+								基于LayUI的新闻管理系统			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								七月 7日, 2020				
+							</p>
+							<p class="relate-post-content">
+								
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2020/07/07/%E5%9F%BA%E4%BA%8ELayUI%E7%9A%84%E6%96%B0%E9%97%BB%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" title="基于LayUI的新闻管理系统">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/cart_cover.jpg" alt="基于LayUI的新闻管理系统"/>
+							</a>
+						</div>
+					</li>												
 			
 					<li>
 						<div class="relate-post-text">
@@ -414,28 +436,6 @@ CTFHub专注信息安全竞赛，拥有完善的题目环境及配套Writeup。�
 							<a href="/2020/02/27/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/" title="博客搭建记录">				
 								
 								<img class="lazy" src="/img/lazy.gif" data-src="/img/cart_cover.jpg" alt="博客搭建记录"/>
-							</a>
-						</div>
-					</li>												
-			
-					<li>
-						<div class="relate-post-text">
-							<a class="relate-post-title" href="/2020/07/07/%E5%9F%BA%E4%BA%8ELayUI%E7%9A%84%E6%96%B0%E9%97%BB%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" title="基于LayUI的新闻管理系统">
-								基于LayUI的新闻管理系统			
-							</a>
-							<p class="relate-post-date">
-								<i class="fa fa-calendar"></i>
-								七月 7日, 2020				
-							</p>
-							<p class="relate-post-content">
-								
-							</p>
-						</div>
-
-						<div class="relate-post-cover">
-							<a href="/2020/07/07/%E5%9F%BA%E4%BA%8ELayUI%E7%9A%84%E6%96%B0%E9%97%BB%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" title="基于LayUI的新闻管理系统">				
-								
-								<img class="lazy" src="/img/lazy.gif" data-src="/img/cart_cover.jpg" alt="基于LayUI的新闻管理系统"/>
 							</a>
 						</div>
 					</li>												
