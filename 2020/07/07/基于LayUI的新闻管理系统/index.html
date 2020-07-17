@@ -266,7 +266,7 @@
 
 	<a href="/2020/07/07/%E5%9F%BA%E4%BA%8ELayUI%E7%9A%84%E6%96%B0%E9%97%BB%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" itemprop="url">
 		<time datetime="2020-07-07T03:50:19.000Z" itemprop="dateUpdated">
-	  		2020-07-07
+	  		2020-07-17
 	  </time>
 	</a> 
 
@@ -308,7 +308,51 @@
 </blockquote>
 <h1 id="2-项目整体系统设计功能展示（video）"><a href="#2-项目整体系统设计功能展示（video）" class="headerlink" title="2.项目整体系统设计功能展示（video）"></a>2.项目整体系统设计功能展示（video）</h1><pre><code>对于项目的展示和关键技术，我在b站上发了两个原创视频，不过声音有点小，需要带耳机。</code></pre><p><a href="https://www.bilibili.com/video/BV1tA411e7S2/" target="_blank" rel="noopener">功能展示</a></p>
 <p><a href="https://www.bilibili.com/video/BV12A411e7Pw/" target="_blank" rel="noopener">关键技术实现思路</a></p>
-<h1 id="3-关键技术实现"><a href="#3-关键技术实现" class="headerlink" title="3.关键技术实现"></a>3.关键技术实现</h1><h2 id="分页类"><a href="#分页类" class="headerlink" title="- 分页类"></a>- 分页类</h2><h2 id="数据库"><a href="#数据库" class="headerlink" title="- 数据库"></a>- 数据库</h2><h1 id="4-总结"><a href="#4-总结" class="headerlink" title="4.总结"></a>4.总结</h1>	
+<h1 id="3-关键技术实现"><a href="#3-关键技术实现" class="headerlink" title="3.关键技术实现"></a>3.关键技术实现</h1><h2 id="图片异步上传功能"><a href="#图片异步上传功能" class="headerlink" title="图片异步上传功能"></a>图片异步上传功能</h2><p><strong>1.1功能描述和截图</strong></p>
+<p>点击上传缩略图，上传之后将上传结果信息返回到页面。</p>
+<p><img src="https://zalcat.oss-cn-hangzhou.aliyuncs.com/blog/%E5%9B%BE%E7%89%871.png" alt=""></p>
+<p><strong>1.2设计步骤和实现的思路</strong></p>
+<p>1、前台页面上传页面放置关联ID按钮，通过js获取上传信息。</p>
+<p>2、layui框架通过事先设定好的信息将res返回到实现设定好的上传接口处理如elem,data,type，最重要的值url保存接口信息，如本例的upload.php.</p>
+<p>3、upload.php也应事先对异步消息可能的结果做好函数处理,上传错误或成功的信息，并将code值来返回作为接口返回的判断值。</p>
+<p>4、最后接口返回上传操作的结果，通过done：定义的函数对res和code的值进行处理，结果处理显示message消息。</p>
+<h2 id="无限极分类功能"><a href="#无限极分类功能" class="headerlink" title="无限极分类功能"></a>无限极分类功能</h2><p>** 2.1功能描述和截图**</p>
+<p>通过数据库设置id和pid来实现子父级的分类如志愿者协会是父级中青志协是子集，<br>**<br>2.2设计步骤和实现的思路**</p>
+<p>通过栈和队列的思想，遍历整个的结果集找到id和pid相同的形成子父关系，压入栈。再将栈存储的信息按队列先进先出的思想取出，形成多级子父关系，思路如下：</p>
+<p>$address = array(</p>
+<pre><code>array(&apos;id&apos;=&gt;1  , &apos;address&apos;=&gt;&apos;江西&apos; , &apos;parent_id&apos; =&gt; 0),
+array(&apos;id&apos;=&gt;2  , &apos;address&apos;=&gt;&apos;江苏&apos; , &apos;parent_id&apos; =&gt; 0),
+array(&apos;id&apos;=&gt;3  , &apos;address&apos;=&gt;&apos;赣州&apos; , &apos;parent_id&apos; =&gt; 1),
+array(&apos;id&apos;=&gt;4  , &apos;address&apos;=&gt;&apos;安远县&apos; , &apos;parent_id&apos; =&gt; 3),
+array(&apos;id&apos;=&gt;5  , &apos;address&apos;=&gt;&apos;欣山镇&apos; , &apos;parent_id&apos; =&gt; 4),
+array(&apos;id&apos;=&gt;6  , &apos;address&apos;=&gt;&apos;南京&apos; , &apos;parent_id&apos; =&gt; 2),
+array(&apos;id&apos;=&gt;7  , &apos;address&apos;=&gt;&apos;玄武区&apos; , &apos;parent_id&apos; =&gt; 6),
+array(&apos;id&apos;=&gt;8  , &apos;address&apos;=&gt;&apos;梅园新村街道&apos;, &apos;parent_id&apos; =&gt; 7),
+array(&apos;id&apos;=&gt;9  , &apos;address&apos;=&gt;&apos;上海&apos; , &apos;parent_id&apos; =&gt; 0),
+array(&apos;id&apos;=&gt;10 , &apos;address&apos;=&gt;&apos;黄浦区&apos; , &apos;parent_id&apos; =&gt; 9),
+array(&apos;id&apos;=&gt;11 , &apos;address&apos;=&gt;&apos;外滩&apos; , &apos;parent_id&apos; =&gt; 10)
+array(&apos;id&apos;=&gt;12 , &apos;address&apos;=&gt;&apos;安庆&apos; , &apos;parent_id&apos; =&gt; 1)
+);</code></pre><p>寻找id=0的子孙节点，id=0入栈，寻找到该节点，为<br>array(‘id’=&gt;1  , ‘address’=&gt;’江西’ , ‘parent_id’ =&gt; 0)</p>
+<p>此时栈为[0]，并且将该节点从原数据中删除，再将id=1入栈，寻找id=1的子孙节点，找到为：</p>
+<p>array(‘id’=&gt;3  , ‘address’=&gt;’赣州’ , ‘parent_id’ =&gt; 1),</p>
+<p>此时栈[0][1],将该节点删除，id=3入栈，寻找id=3的子孙节点，找到：</p>
+<p>array(‘id’=&gt;4  , ‘address’=&gt;’安远县’ , ‘parent_id’ =&gt; 3)</p>
+<p>栈[0][1][3]，将该节点删除，id=4入栈，寻找id=4的子孙节点，找到：</p>
+<p>array(‘id’=&gt;5  , ‘address’=&gt;’欣山镇’       , ‘parent_id’ =&gt; 4),</p>
+<p>栈[0][1][3][4]，将该节点删除，id=5入栈，栈[0][1][3][4][5]，并寻找id=5的子节点，遍历后未找到，于是将id=5出栈，再次寻找id=4的子孙节点，依次进行。最后完成整个迭代。</p>
+<p>栈的情况如下：<br>`[0]</p>
+<p>[0][1]</p>
+<p>[0][1][3]</p>
+<p>[0][1][3][4]</p>
+<p>[0][1][3][4][5]</p>
+<p>[0][1][3][4]</p>
+<p>[0][1][3]<br>[0][1]</p>
+<p>[0]`</p>
+<h2 id="编辑器功能"><a href="#编辑器功能" class="headerlink" title="编辑器功能"></a>编辑器功能</h2><p><strong>3.1功能描述和截图</strong></p>
+<p>实现多功能编辑器，在编辑的过程是实时保存</p>
+<p><strong>3.2设计步骤和实现的思路</strong><br>使用的ueditor富文本编辑器，一个开源的编辑器可以实现一个轻量的多功能编辑器，<br>将项目下载到本地写入html代码，可以初步的看到编辑器效果。编辑器有自定义的参数项，通过getContent和setContent方法可以设置和读取编辑器的内容，其中setContent设置编辑器获取用户输入的内容，然后用getContent获取用户输入并返回，最后将值传到数据库。</p>
+<h1 id="4-出现的问题"><a href="#4-出现的问题" class="headerlink" title="4.出现的问题"></a>4.出现的问题</h1><p><strong>图片上传操作时，显示上传接口异常。</strong><br>  <strong>出错原因：</strong>没有创建upload文件夹，并放在正确的位置。<br>  <strong>解决办法：</strong>通过审查元素-网络，查看报错信息，然后使用 print $_SERVER[‘DOCUMENT_ROOT’];或在phpstudy上，来查看服务器根目录，创建upload文件夹。</p>
+	
 		</div>
 		
 		<div id="current-post-cover" data-scr="/img/cart_cover.jpg"></div>
