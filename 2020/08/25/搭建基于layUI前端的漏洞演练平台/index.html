@@ -295,8 +295,10 @@
 		</div>
 
 		<div class="article-content" id="article-content">
-			<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><pre><code>再次重新搭建大创项目，命名为Predators，以Lay UI为前端基础的漏洞演练平台，设置了分难度等级的十几种十分常见的漏洞，csrf,ssrf,sql,php序列化等。</code></pre><p>项目地址：<a href="https://github.com/zalcat/predators" target="_blank" rel="noopener">https://github.com/zalcat/predators</a></p>
-<p>项目设计开发好后，采用了上传至github，和配置docker file，使得平台环境的搭建可以更安全和方便</p>
+			<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><blockquote>
+<p>再次重新搭建大创项目，命名为Predators，以Lay UI为前端基础的漏洞演练平台，设置了分难度等级的十几种十分常见的漏洞，csrf,ssrf,sql,php序列化等。</p>
+</blockquote>
+<pre><code>项目地址：https://github.com/zalcat/predators</code></pre><p>项目设计开发好后，采用了上传至github，和配置docker file，使得平台环境的搭建可以更安全和方便</p>
 <h1 id="上传至github"><a href="#上传至github" class="headerlink" title="上传至github"></a>上传至github</h1><pre><code>常用的方法有使用ssh将文件直接推送到项目地址，因为文件较多，也可以使用拖拽的方式，将项目文件夹在github官网直接上传</code></pre><p>首先创建GitHub项目，会得到一个空项目，根据自己的选择可能会有一个.md的文件。此时，<strong>重新进入项目</strong>（否则，只能通过敲打代码的方式import code），选择add file-upload file。</p>
 <p><img src="https://zalcat.oss-cn-hangzhou.aliyuncs.com/blog/20200825125649.png" alt=""></p>
 <h1 id="创建dockerfile"><a href="#创建dockerfile" class="headerlink" title="创建dockerfile"></a>创建dockerfile</h1><pre><code>通过dockerfile 在环境中快速builddocker容器。在玩漏洞平台时很可能会造成一些难以恢复的错误，比如sql留言板模块，可将所有的普通用户信息重置，使用docker容器，在发生此类错误时，可以快速的再次搭建</code></pre><p>看看项目dockefile的具体内容</p>
