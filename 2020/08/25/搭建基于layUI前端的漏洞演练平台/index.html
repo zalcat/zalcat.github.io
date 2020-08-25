@@ -304,9 +304,9 @@
 <h1 id="创建dockerfile"><a href="#创建dockerfile" class="headerlink" title="创建dockerfile"></a>创建dockerfile</h1><pre><code>通过dockerfile 在环境中快速builddocker容器。在玩漏洞平台时很可能会造成一些难以恢复的错误，比如sql留言板模块，可将所有的普通用户信息重置，使用docker容器，在发生此类错误时，可以快速的再次搭建</code></pre><p>看看项目dockefile的具体内容</p>
 <p><img src="https://zalcat.oss-cn-hangzhou.aliyuncs.com/blog/20200825130000.png" alt=""></p>
 <p>注：<strong>mattrayner是dockerhub一个使用较多的lamp环境</strong></p>
-<h1 id="搭建docker容器"><a href="#搭建docker容器" class="headerlink" title="搭建docker容器"></a>搭建docker容器</h1><p>首先clone github上的项目,</p>
-<pre><code>git clone https://github.com/zalcat/predators.git</code></pre><p>使用当前目录创建镜像</p>
-<pre><code>docker build -t predators .</code></pre><p>最后进入容器修改相应的数据库连接信息，也可以使用默认的root123</p>
+<h1 id="搭建docker容器"><a href="#搭建docker容器" class="headerlink" title="搭建docker容器"></a>搭建docker容器</h1><p>首先clone github上的项目:</p>
+<pre><code>git clone https://github.com/zalcat/predators.git</code></pre><p>使用当前目录创建镜像:</p>
+<pre><code>docker build -t predators .</code></pre><p>最后进入容器修改相应的数据库连接信息，也可以使用默认的root123.</p>
 	
 		</div>
 		
