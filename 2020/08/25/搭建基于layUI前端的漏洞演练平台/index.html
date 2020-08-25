@@ -228,6 +228,19 @@
 		插件作者：KELEN
 		插件来源: https://github.com/KELEN/katelog
 -->
+
+	
+		<div class="layout-toc">
+			<div id="layout-toc">
+				<div class="k-catelog-list" id="catelog-list" data-title="文章目录"></div>
+			</div>
+		</div>
+
+		
+<script src="/plugin/toc/katelog.min.js"></script>
+
+
+		
 	 
 
 <div class="layout-post">
@@ -264,12 +277,12 @@
 				
 	<i class="icon-price-tags"></i>
 	
-		<a href="/tags/%E5%88%86%E4%BA%AB/" class=" ">
-			分享
-		</a>
-	
 		<a href="/tags/%E6%80%BB%E7%BB%93/" class=" ">
 			总结
+		</a>
+	
+		<a href="/tags/%E8%AE%B0%E5%BD%95/" class=" ">
+			记录
 		</a>
 	
 		
@@ -282,7 +295,17 @@
 		</div>
 
 		<div class="article-content" id="article-content">
-				
+			<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><pre><code>再次重新搭建大创项目，命名为Predators，以Lay UI为前端基础的漏洞演练平台，设置了分难度等级的十几种十分常见的漏洞，csrf,ssrf,sql,php序列化等。</code></pre><p>项目地址：<a href="https://github.com/zalcat/predators" target="_blank" rel="noopener">https://github.com/zalcat/predators</a></p>
+<p>项目设计开发好后，采用了上传至github，和配置docker file，使得平台环境的搭建可以更安全和方便</p>
+<h1 id="上传至github"><a href="#上传至github" class="headerlink" title="上传至github"></a>上传至github</h1><pre><code>常用的方法有使用ssh将文件直接推送到项目地址，因为文件较多，也可以使用拖拽的方式，将项目文件夹在github官网直接上传</code></pre><p>首先创建GitHub项目，会得到一个空项目，根据自己的选择可能会有一个.md的文件。此时，<strong>重新进入项目</strong>（否则，只能通过敲打代码的方式import code），选择add file-upload file。</p>
+<p><img src="https://zalcat.oss-cn-hangzhou.aliyuncs.com/blog/20200825125649.png" alt=""></p>
+<h1 id="创建dockerfile"><a href="#创建dockerfile" class="headerlink" title="创建dockerfile"></a>创建dockerfile</h1><pre><code>通过dockerfile 在环境中快速builddocker容器。在玩漏洞平台时很可能会造成一些难以恢复的错误，比如sql留言板模块，可将所有的普通用户信息重置，使用docker容器，在发生此类错误时，可以快速的再次搭建</code></pre><p>看看项目dockefile的具体内容</p>
+<p><img src="https://zalcat.oss-cn-hangzhou.aliyuncs.com/blog/20200825130000.png" alt=""></p>
+<p>注：<strong>mattrayner是dockerhub一个使用较多的lamp环境</strong></p>
+<h1 id="搭建docker容器"><a href="#搭建docker容器" class="headerlink" title="搭建docker容器"></a>搭建docker容器</h1><p>首先clone github上的项目,</p>
+<pre><code>git clone https://github.com/zalcat/predators.git</code></pre><p>使用当前目录创建镜像</p>
+<pre><code>docker build -t predators .</code></pre><p>最后进入容器修改相应的数据库连接信息，也可以使用默认的root123</p>
+	
 		</div>
 		
 		<div id="current-post-cover" data-scr="/img/cart_cover.jpg"></div>
@@ -319,88 +342,6 @@
 <div class="relate-post">
 	
 		<ul>
-			
-					<li>
-						<div class="relate-post-text">
-							<a class="relate-post-title" href="/2020/06/13/1/" title="1">
-								1			
-							</a>
-							<p class="relate-post-date">
-								<i class="fa fa-calendar"></i>
-								六月 13日, 2020				
-							</p>
-							<p class="relate-post-content">
-								this is a test
-
-							</p>
-						</div>
-
-						<div class="relate-post-cover">
-							<a href="/2020/06/13/1/" title="1">				
-								
-								<img class="lazy" src="/img/lazy.gif" data-src="/img/cart_cover.jpg" alt="1"/>
-							</a>
-						</div>
-					</li>												
-			
-					<li>
-						<div class="relate-post-text">
-							<a class="relate-post-title" href="/2020/03/27/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF%E5%92%8C%E7%BB%8F%E9%AA%8C(v1.0)/" title="个人认可的网络安全学习路线和建议">
-								个人认可的网络安全学习路线和建议			
-							</a>
-							<p class="relate-post-date">
-								<i class="fa fa-calendar"></i>
-								三月 27日, 2020				
-							</p>
-							<p class="relate-post-content">
-								
-在经过一年多的web安全路上的摸索，结合自己的实际经历和一些大牛的观点有了这些文字。
-
-
-希望自己能在安全的正道上越走越远。
-
- &emsp;–&gt;安全等级划分
-1级：脚本小子——很多都是这里开始的
-2级：网络安全工程师——难度...
-							</p>
-						</div>
-
-						<div class="relate-post-cover">
-							<a href="/2020/03/27/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF%E5%92%8C%E7%BB%8F%E9%AA%8C(v1.0)/" title="个人认可的网络安全学习路线和建议">				
-								
-								<img class="lazy" src="/img/lazy.gif" data-src="/img/cart_cover.jpg" alt="个人认可的网络安全学习路线和建议"/>
-							</a>
-						</div>
-					</li>												
-			
-					<li>
-						<div class="relate-post-text">
-							<a class="relate-post-title" href="/2020/02/29/python-flask-ssti/" title="python-flask(ssti)">
-								python-flask(ssti)			
-							</a>
-							<p class="relate-post-date">
-								<i class="fa fa-calendar"></i>
-								二月 29日, 2020				
-							</p>
-							<p class="relate-post-content">
-								
----
----
-
-0x012020新春公益ctf&emsp;FlaskApp：
-考察点：https://xz.aliyun.com/t/2553
-探测：
-在decode界面可以触发SSTI，提交payload的base64编码即可，...
-							</p>
-						</div>
-
-						<div class="relate-post-cover">
-							<a href="/2020/02/29/python-flask-ssti/" title="python-flask(ssti)">				
-								
-								<img class="lazy" src="/img/lazy.gif" data-src="/img/cart_cover.jpg" alt="python-flask(ssti)"/>
-							</a>
-						</div>
-					</li>												
 			
 					<li>
 						<div class="relate-post-text">
@@ -506,6 +447,88 @@ CTFHub专注信息安全竞赛，拥有完善的题目环境及配套Writeup。�
 							<a href="/2020/02/27/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/" title="博客搭建记录">				
 								
 								<img class="lazy" src="/img/lazy.gif" data-src="/img/cart_cover.jpg" alt="博客搭建记录"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2020/06/13/1/" title="1">
+								1			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								六月 13日, 2020				
+							</p>
+							<p class="relate-post-content">
+								this is a test
+
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2020/06/13/1/" title="1">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/cart_cover.jpg" alt="1"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2020/03/27/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF%E5%92%8C%E7%BB%8F%E9%AA%8C(v1.0)/" title="个人认可的网络安全学习路线和建议">
+								个人认可的网络安全学习路线和建议			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								三月 27日, 2020				
+							</p>
+							<p class="relate-post-content">
+								
+在经过一年多的web安全路上的摸索，结合自己的实际经历和一些大牛的观点有了这些文字。
+
+
+希望自己能在安全的正道上越走越远。
+
+ &emsp;–&gt;安全等级划分
+1级：脚本小子——很多都是这里开始的
+2级：网络安全工程师——难度...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2020/03/27/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF%E5%92%8C%E7%BB%8F%E9%AA%8C(v1.0)/" title="个人认可的网络安全学习路线和建议">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/cart_cover.jpg" alt="个人认可的网络安全学习路线和建议"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2020/02/29/python-flask-ssti/" title="python-flask(ssti)">
+								python-flask(ssti)			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								二月 29日, 2020				
+							</p>
+							<p class="relate-post-content">
+								
+---
+---
+
+0x012020新春公益ctf&emsp;FlaskApp：
+考察点：https://xz.aliyun.com/t/2553
+探测：
+在decode界面可以触发SSTI，提交payload的base64编码即可，...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2020/02/29/python-flask-ssti/" title="python-flask(ssti)">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/cart_cover.jpg" alt="python-flask(ssti)"/>
 							</a>
 						</div>
 					</li>												
