@@ -13,7 +13,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
   <title>
     
-      博客搭建记录 | 晓不是小
+      搭建基于layUI前端的漏洞演练平台 | 晓不是小
     
   </title>
   <meta name="author" content="Jonathan">
@@ -101,7 +101,7 @@
 	<!-- Page title -->
 	<p>
 		
-			「博客搭建记录」
+			「搭建基于layUI前端的漏洞演练平台」
 		
 	</p>
 
@@ -228,27 +228,14 @@
 		插件作者：KELEN
 		插件来源: https://github.com/KELEN/katelog
 -->
-
-	
-		<div class="layout-toc">
-			<div id="layout-toc">
-				<div class="k-catelog-list" id="catelog-list" data-title="文章目录"></div>
-			</div>
-		</div>
-
-		
-<script src="/plugin/toc/katelog.min.js"></script>
-
-
-		
 	 
 
 <div class="layout-post">
 	<div id="layout-post">
 		<div class="article-title">
 			
-	<a href="/2020/02/27/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/" itemprop="url">
-		博客搭建记录
+	<a href="/2020/08/25/%E6%90%AD%E5%BB%BA%E5%9F%BA%E4%BA%8ElayUI%E5%89%8D%E7%AB%AF%E7%9A%84%E6%BC%8F%E6%B4%9E%E6%BC%94%E7%BB%83%E5%B9%B3%E5%8F%B0/" itemprop="url">
+		搭建基于layUI前端的漏洞演练平台
 	</a>
 
 		</div>
@@ -264,9 +251,9 @@
 
 	更新于
 
-	<a href="/2020/02/27/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/" itemprop="url">
-		<time datetime="2020-02-27T02:40:50.000Z" itemprop="dateUpdated">
-	  		2020-02-27
+	<a href="/2020/08/25/%E6%90%AD%E5%BB%BA%E5%9F%BA%E4%BA%8ElayUI%E5%89%8D%E7%AB%AF%E7%9A%84%E6%BC%8F%E6%B4%9E%E6%BC%94%E7%BB%83%E5%B9%B3%E5%8F%B0/" itemprop="url">
+		<time datetime="2020-08-25T04:21:21.000Z" itemprop="dateUpdated">
+	  		2020-08-25
 	  </time>
 	</a> 
 
@@ -277,12 +264,12 @@
 				
 	<i class="icon-price-tags"></i>
 	
-		<a href="/tags/%E6%80%BB%E7%BB%93/" class=" ">
-			总结
+		<a href="/tags/%E5%88%86%E4%BA%AB/" class=" ">
+			分享
 		</a>
 	
-		<a href="/tags/%E8%AE%B0%E5%BD%95/" class=" ">
-			记录
+		<a href="/tags/%E6%80%BB%E7%BB%93/" class=" ">
+			总结
 		</a>
 	
 		
@@ -295,79 +282,7 @@
 		</div>
 
 		<div class="article-content" id="article-content">
-			<h1></h1>
-
-<p><img src="https://zalcat.oss-cn-hangzhou.aliyuncs.com/blog/20200227154448.png" alt=""></p>
-<h1 id="emsp-起因"><a href="#emsp-起因" class="headerlink" title="&emsp;起因"></a>&emsp;起因</h1><p>我在csdn写了博客1年多了，翻找自己以前的文章发现几个问题</p>
-<ul>
-<li>内容杂乱不成体系</li>
-<li>深度不够</li>
-<li>长篇幅文章不合适</li>
-</ul>
-<p>简单来说，自己想提升一点，用新的博客重新开始记录，csdn当然还会用，只是考虑到自己要记录一些内网相关的学习，以及对漏洞的具体分析，csdn的文章形式和主题我都觉得不是很合适。</p>
-<p>对于长篇幅文章，比如我在csdn中记录Linux学习，和web开发基础的文章，是以目录单篇置顶，各个章节从目录直接进入，解决了文章发布多很难找到自己文章的问题，所以对于长篇文章我可能还是会放到csdn上。</p>
-<h2 id="ensp-github-hexo-window"><a href="#ensp-github-hexo-window" class="headerlink" title="&ensp;github+hexo+window"></a>&ensp;<img src="https://zalcat.oss-cn-hangzhou.aliyuncs.com/blog/20200227154448.png" alt="">github+hexo+window</h2><p>选择github是因为我有个比较喜欢的Annie主题在github上能用hexo来搭建。</p>
-<p>我有一个阿里云学生机但考虑到迁移、域名，还有自己经常恢复快照，这是考虑到安全性了，就选择了在github上去搭建。</p>
-<p>wordpress是我考虑过的，wordpress有专门插件迁移方便，数据大了，要付费，个人博客内存不大估计不用，而且自己迁移也不难。wordpress也不用 使用图床来存储图片。</p>
-<p>但考虑到wordpress放不到GitHub上是用不了Annie主题，页面内嵌广告也不少，还是放弃了</p>
-<p><img src="https://zalcat.oss-cn-hangzhou.aliyuncs.com/blog/20200227154448.png" alt=""><br>##&ensp;一台电脑部署两个或多个GitHub 账号</p>
-<p>以我的举例</p>
-<ul>
-<li>账户一：IlHlI</li>
-<li>账户二：zalcat（博客现在使用的账户）</li>
-</ul>
-<h2 id="ensp-密钥配置"><a href="#ensp-密钥配置" class="headerlink" title="&ensp;密钥配置"></a>&ensp;<img src="https://zalcat.oss-cn-hangzhou.aliyuncs.com/blog/20200227154448.png" alt="">密钥配置</h2><p><code>ssh-keygen -t rsa -C &quot;这里是你的邮箱&quot;</code></p>
-<p>配置新密钥名称默认是id_rsa,<br>两个账户不能相同，比如新建的为，id_rsa_github</p>
-<p>我的配置</p>
-<p><img src="https://zalcat.oss-cn-hangzhou.aliyuncs.com/blog/20200227115741.png" alt=""></p>
-<h2 id="ensp-config配置"><a href="#ensp-config配置" class="headerlink" title="&ensp;config配置"></a>&ensp;<img src="https://zalcat.oss-cn-hangzhou.aliyuncs.com/blog/20200227154448.png" alt="">config配置</h2><p>查看你的.ssh/根路径下, 有没有config文件,（ 比如我的路径为C:\Users.ssh）没有则命令创建一个config文件</p>
-<p>ps:没有后缀全名的config文件</p>
-<p>写入如下</p>
-<pre><code>#第一个账号，默认使用的账号，不用做任何更改
-Host github.com
-    HostName github.com
-    User git
-    IdentityFile ~/.ssh/id_rsa
-
-#第二个新账号，#&quot;xxxxxx&quot;为前缀名，可以任意设置，要记住，后面需要用到
-Host xxxxxx.github.com
-    HostName github.com
-    User git
-    IdentityFile ~/.ssh/这里是你创建的新密钥的名称</code></pre><h2 id="ensp-取消全局用户名-邮箱，单独设置"><a href="#ensp-取消全局用户名-邮箱，单独设置" class="headerlink" title="&ensp;取消全局用户名/邮箱，单独设置"></a>&ensp;<img src="https://zalcat.oss-cn-hangzhou.aliyuncs.com/blog/20200227154448.png" alt="">取消全局用户名/邮箱，单独设置</h2><p>执行如下命令，取消全局用户名和邮箱配置（如果已经设置了全局的话）：</p>
-<pre><code>git config --global --unset user.name
-git config --global --unset user.email</code></pre><p>分别进入你的两个Hexo博客.git目录下执行以下命令单独设置用户名/邮箱：</p>
-<pre><code>git config user.name &quot;用户名&quot;
-git config user.email &quot;邮箱&quot;</code></pre><h2 id="ensp-hexo-配置文件修改git地址"><a href="#ensp-hexo-配置文件修改git地址" class="headerlink" title="&ensp;hexo 配置文件修改git地址"></a>&ensp;<img src="https://zalcat.oss-cn-hangzhou.aliyuncs.com/blog/20200227154448.png" alt="">hexo 配置文件修改git地址</h2><p>打开你的第二个博客Hexo目录下的_config.yml文件，找到deploy关键字，写入以下配置并保存：</p>
-<pre><code>deploy:
-  type: git
-  repository: git@xxxxxx.github.com:你的用户名/你的用户名.github.io.git
-  branch: master</code></pre><p>比如我的配置：</p>
-<pre><code>deploy:
-  type: git
-  repo: git@zalcat.github.com:zalcat/zalcat.github.io.git
-  branch: master</code></pre><p>再次执行hexo g -d就能成功将新的博客部署到 Github 上了。</p>
-<h1 id="emsp-修改主题"><a href="#emsp-修改主题" class="headerlink" title="&emsp;修改主题"></a>&emsp;<img src="https://zalcat.oss-cn-hangzhou.aliyuncs.com/blog/20200227154448.png" alt="">修改主题</h1><p>GitHub clone下来的主题Annie 主打的是文艺、优雅、简洁。</p>
-<p>我首先对其字体，背景做了调整，发现如下问题</p>
-<p><img src="https://zalcat.oss-cn-hangzhou.aliyuncs.com/blog/20200227113634.png" alt=""></p>
-<p>Annie.css是我要修改css用到的唯一文件。</p>
-<p>执行<code>hexo clean</code> 的时候会清除.deploy_git下的Annie.css，<code>hexo g</code>又生成 .deploy_git下的文件，但不论我是先修改哪个还是一起修改，执行<code>hexo g -d</code>推送到github上时，都会恢复为主题原来的配置，也就是我的修改没有生效又回去了。</p>
-<p>最后的办法是，对github上和本地这两个Annie.css同时做修改，<code>hexo g -d</code> 成功修改</p>
-<h1 id="emsp-图床的使用"><a href="#emsp-图床的使用" class="headerlink" title="&emsp;图床的使用"></a>&emsp;<img src="https://zalcat.oss-cn-hangzhou.aliyuncs.com/blog/20200227154448.png" alt="">图床的使用</h1><blockquote>
-<p>&emsp;<strong>在本地写md文档时候插入图片是一件挺麻烦的事情，使用本地图片的话，每次在给别人分享文档或者上传博客的时候就比较难顶了。网上有两种方法可以解决这个问题，一种是使用图片的base64编码，但是图片转换为base64编码之后，编码长度会很大，文档的可读性不好，而且也会使文档的体积急剧变大，这种方法显然不太好。另外一种常用的方法就是使用图床</strong></p>
-</blockquote>
-<p>下面就说一下搭建图床的一个坑。</p>
-<p>首先阿里云购买和配置图床Bucket，而后使用PicGo工具来加快图片的使用</p>
-<blockquote>
-<p><strong>PicGo下载地址<a href="https://github.com/Molunerfinn/PicGo" target="_blank" rel="noopener">https://github.com/Molunerfinn/PicGo</a></strong></p>
-</blockquote>
-<p>这类工具要有接入阿里云的权限，才完成把图片上传到Bucket然后把图片的链接返回，但是账户的直接权限太大，考虑到安全起见，在账户中再新建一个账户给他的权限仅限于OSS ,而没有ECS、控制台等。</p>
-<p>但PicGo我是用小权限用户的时候出现无法连接，错误报告日志，记录的是Accesskeyid无此记录</p>
-<p>我下载了阿里云官方的oss链接client，却可以上传成功。考虑到picGo方便一点，就直接再账户下创建了Accesskey,连接成功。</p>
-<hr>
-<hr>
-<h1 id="emsp-The-end"><a href="#emsp-The-end" class="headerlink" title="&emsp;The end"></a>&emsp;<img src="https://zalcat.oss-cn-hangzhou.aliyuncs.com/blog/20200227154448.png" alt="">The end</h1><p>以上就是博客搭建遇到的问题，后续肯定会出现一些现在没考虑到，没出现的弊端，但办法总比困难多。</p>
-<p>希望从继csdn后开辟的新博客天地，zalcat博客能成为更高质量、更有深度、更具个性的博客。</p>
-	
+				
 		</div>
 		
 		<div id="current-post-cover" data-scr="/img/cart_cover.jpg"></div>
@@ -385,12 +300,8 @@ git config user.email &quot;邮箱&quot;</code></pre><h2 id="ensp-hexo-配置文
 	<span>
 		<a id="totop-post-page">返回顶部</a>
 		
-			<a href="/2020/02/29/python-flask-ssti/" title="python-flask(ssti)" rel="prev">
-				&laquo;上一篇
-			</a>
 		
-		
-			<a href="/2020/02/24/test2/" title="test2" rel="next">
+			<a href="/2020/07/07/%E5%9F%BA%E4%BA%8ELayUI%E7%9A%84%E6%96%B0%E9%97%BB%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" title="基于LayUI的新闻管理系统" rel="next">
 				下一篇&raquo;
 			</a>
 			
@@ -408,6 +319,88 @@ git config user.email &quot;邮箱&quot;</code></pre><h2 id="ensp-hexo-配置文
 <div class="relate-post">
 	
 		<ul>
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2020/06/13/1/" title="1">
+								1			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								六月 13日, 2020				
+							</p>
+							<p class="relate-post-content">
+								this is a test
+
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2020/06/13/1/" title="1">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/cart_cover.jpg" alt="1"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2020/03/27/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF%E5%92%8C%E7%BB%8F%E9%AA%8C(v1.0)/" title="个人认可的网络安全学习路线和建议">
+								个人认可的网络安全学习路线和建议			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								三月 27日, 2020				
+							</p>
+							<p class="relate-post-content">
+								
+在经过一年多的web安全路上的摸索，结合自己的实际经历和一些大牛的观点有了这些文字。
+
+
+希望自己能在安全的正道上越走越远。
+
+ &emsp;–&gt;安全等级划分
+1级：脚本小子——很多都是这里开始的
+2级：网络安全工程师——难度...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2020/03/27/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF%E5%92%8C%E7%BB%8F%E9%AA%8C(v1.0)/" title="个人认可的网络安全学习路线和建议">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/cart_cover.jpg" alt="个人认可的网络安全学习路线和建议"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2020/02/29/python-flask-ssti/" title="python-flask(ssti)">
+								python-flask(ssti)			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								二月 29日, 2020				
+							</p>
+							<p class="relate-post-content">
+								
+---
+---
+
+0x012020新春公益ctf&emsp;FlaskApp：
+考察点：https://xz.aliyun.com/t/2553
+探测：
+在decode界面可以触发SSTI，提交payload的base64编码即可，...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2020/02/29/python-flask-ssti/" title="python-flask(ssti)">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/cart_cover.jpg" alt="python-flask(ssti)"/>
+							</a>
+						</div>
+					</li>												
 			
 					<li>
 						<div class="relate-post-text">
@@ -488,104 +481,31 @@ CTFHub专注信息安全竞赛，拥有完善的题目环境及配套Writeup。�
 			
 					<li>
 						<div class="relate-post-text">
-							<a class="relate-post-title" href="/2020/08/25/%E6%90%AD%E5%BB%BA%E5%9F%BA%E4%BA%8ElayUI%E5%89%8D%E7%AB%AF%E7%9A%84%E6%BC%8F%E6%B4%9E%E6%BC%94%E7%BB%83%E5%B9%B3%E5%8F%B0/" title="搭建基于layUI前端的漏洞演练平台">
-								搭建基于layUI前端的漏洞演练平台			
+							<a class="relate-post-title" href="/2020/02/27/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/" title="博客搭建记录">
+								博客搭建记录			
 							</a>
 							<p class="relate-post-date">
 								<i class="fa fa-calendar"></i>
-								八月 25日, 2020				
+								二月 27日, 2020				
 							</p>
 							<p class="relate-post-content">
 								
+
+
+&emsp;起因我在csdn写了博客1年多了，翻找自己以前的文章发现几个问题
+
+内容杂乱不成体系
+深度不够
+长篇幅文章不合适
+
+简单来说，自己想提升一点，用新的博客重新开始记录，csdn当然还会用，只是考虑到自己要记录一些内网相...
 							</p>
 						</div>
 
 						<div class="relate-post-cover">
-							<a href="/2020/08/25/%E6%90%AD%E5%BB%BA%E5%9F%BA%E4%BA%8ElayUI%E5%89%8D%E7%AB%AF%E7%9A%84%E6%BC%8F%E6%B4%9E%E6%BC%94%E7%BB%83%E5%B9%B3%E5%8F%B0/" title="搭建基于layUI前端的漏洞演练平台">				
+							<a href="/2020/02/27/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/" title="博客搭建记录">				
 								
-								<img class="lazy" src="/img/lazy.gif" data-src="/img/cart_cover.jpg" alt="搭建基于layUI前端的漏洞演练平台"/>
-							</a>
-						</div>
-					</li>												
-			
-					<li>
-						<div class="relate-post-text">
-							<a class="relate-post-title" href="/2020/06/13/1/" title="1">
-								1			
-							</a>
-							<p class="relate-post-date">
-								<i class="fa fa-calendar"></i>
-								六月 13日, 2020				
-							</p>
-							<p class="relate-post-content">
-								this is a test
-
-							</p>
-						</div>
-
-						<div class="relate-post-cover">
-							<a href="/2020/06/13/1/" title="1">				
-								
-								<img class="lazy" src="/img/lazy.gif" data-src="/img/cart_cover.jpg" alt="1"/>
-							</a>
-						</div>
-					</li>												
-			
-					<li>
-						<div class="relate-post-text">
-							<a class="relate-post-title" href="/2020/03/27/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF%E5%92%8C%E7%BB%8F%E9%AA%8C(v1.0)/" title="个人认可的网络安全学习路线和建议">
-								个人认可的网络安全学习路线和建议			
-							</a>
-							<p class="relate-post-date">
-								<i class="fa fa-calendar"></i>
-								三月 27日, 2020				
-							</p>
-							<p class="relate-post-content">
-								
-在经过一年多的web安全路上的摸索，结合自己的实际经历和一些大牛的观点有了这些文字。
-
-
-希望自己能在安全的正道上越走越远。
-
- &emsp;–&gt;安全等级划分
-1级：脚本小子——很多都是这里开始的
-2级：网络安全工程师——难度...
-							</p>
-						</div>
-
-						<div class="relate-post-cover">
-							<a href="/2020/03/27/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF%E5%92%8C%E7%BB%8F%E9%AA%8C(v1.0)/" title="个人认可的网络安全学习路线和建议">				
-								
-								<img class="lazy" src="/img/lazy.gif" data-src="/img/cart_cover.jpg" alt="个人认可的网络安全学习路线和建议"/>
-							</a>
-						</div>
-					</li>												
-			
-					<li>
-						<div class="relate-post-text">
-							<a class="relate-post-title" href="/2020/02/29/python-flask-ssti/" title="python-flask(ssti)">
-								python-flask(ssti)			
-							</a>
-							<p class="relate-post-date">
-								<i class="fa fa-calendar"></i>
-								二月 29日, 2020				
-							</p>
-							<p class="relate-post-content">
-								
----
----
-
-0x012020新春公益ctf&emsp;FlaskApp：
-考察点：https://xz.aliyun.com/t/2553
-探测：
-在decode界面可以触发SSTI，提交payload的base64编码即可，...
-							</p>
-						</div>
-
-						<div class="relate-post-cover">
-							<a href="/2020/02/29/python-flask-ssti/" title="python-flask(ssti)">				
-								
-								<img class="lazy" src="/img/lazy.gif" data-src="/img/cart_cover.jpg" alt="python-flask(ssti)"/>
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/cart_cover.jpg" alt="博客搭建记录"/>
 							</a>
 						</div>
 					</li>												
