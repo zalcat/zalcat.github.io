@@ -295,7 +295,7 @@
 		</div>
 
 		<div class="article-content" id="article-content">
-			<h1 id="docker前言"><a href="#docker前言" class="headerlink" title="docker前言"></a>docker前言</h1><blockquote>
+			<h1 id="1-docker前言"><a href="#1-docker前言" class="headerlink" title="1. docker前言"></a>1. docker前言</h1><blockquote>
 <p>Docker 是一种运行于 Linux 和 Windows 上的软件，用于创建、管理和编排容器。</p>
 </blockquote>
 <p>docker是国外的技术，2013年一炮而红，也有其他的容器技术可选择.</p>
@@ -305,7 +305,7 @@
 <p><strong>docker原理和技术实现学习用到电子书：</strong></p>
 <p><a href="http://c.biancheng.net/view/3170.html" target="_blank" rel="noopener" title="free book1">http://c.biancheng.net/view/3170.html</a></p>
 <p><a href="https://yuedu.baidu.com/ebook/d817967416fc700abb68fca1?pn=1" target="_blank" rel="noopener" title="freebook 2">https://yuedu.baidu.com/ebook/d817967416fc700abb68fca1?pn=1</a></p>
-<h1 id="docker镜像和容器"><a href="#docker镜像和容器" class="headerlink" title="docker镜像和容器"></a>docker镜像和容器</h1><p>静止的(stop状态或没有实例化)容器类似多层镜像</p>
+<h1 id="2-docker镜像和容器"><a href="#2-docker镜像和容器" class="headerlink" title="2. docker镜像和容器"></a>2. docker镜像和容器</h1><p>静止的(stop状态或没有实例化)容器类似多层镜像</p>
 <p><img src="https://zalcat.oss-cn-hangzhou.aliyuncs.com/blog/20200912115414.png" alt=""></p>
 <p><strong>镜像可以理解为一种构建时（build-time）结构，而容器可以理解为一种运行时（run-time）结构，如下图所示。</strong></p>
 <p><img src="https://zalcat.oss-cn-hangzhou.aliyuncs.com/blog/20200912115250.png" alt=""></p>
@@ -316,21 +316,20 @@ docker search --filter &quot;is-official=true&quot; image_name
 是否是自动化构建
 docker search --filter &quot;is-automated=true&quot; image_name
 大于多少颗星
-docker search --filter stars=3 image_name</code></pre><p>下载镜像：docker pull image_name</p>
-<p>2.本地镜像的查看：docker images</p>
-<p>3.本地镜像的删除：docker rmi image_name</p>
+docker search --filter stars=3 image_name</code></pre><p>1.下载镜像：<code>docker pull image_name</code></p>
+<p>2.本地镜像的查看：<code>docker images</code></p>
+<p>3.本地镜像的删除：<code>docker rmi image_name</code></p>
 <p><img src="https://zalcat.oss-cn-hangzhou.aliyuncs.com/blog/20200912115641.png" alt=""></p>
-<h1 id="docker容器"><a href="#docker容器" class="headerlink" title="docker容器"></a>docker容器</h1><p><strong>docker中的术语</strong></p>
+<h1 id="3-docker容器"><a href="#3-docker容器" class="headerlink" title="3. docker容器"></a>3. docker容器</h1><p><strong>docker中的术语</strong></p>
 <p><img src="https://zalcat.oss-cn-hangzhou.aliyuncs.com/blog/20200912120627.png" alt=""></p>
 <p>容器是镜像的运行时实例。正如从虚拟机模板上启动 VM 一样，用户也同样可以从单个镜像上启动一个或多个容器。</p>
 <p>虚拟机和容器最大的区别是容器更快并且更轻量级——与虚拟机运行在完整的操作系统之上相比，容器会共享其所在主机的操作系统/内核。</p>
 <p>下图为使用单个 Docker 镜像启动多个容器的示意图。</p>
 <p><img src="https://zalcat.oss-cn-hangzhou.aliyuncs.com/blog/20200912115733.png" alt=""></p>
-<h2 id="容器的修改及保存"><a href="#容器的修改及保存" class="headerlink" title="容器的修改及保存"></a>容器的修改及保存</h2><p>1.<strong>进入容器</strong>：docker exec -it container_name/container_id /bin/bash</p>
-<p>2.<strong>退出容器</strong>：exit</p>
+<h2 id="容器的修改及保存"><a href="#容器的修改及保存" class="headerlink" title="容器的修改及保存"></a>容器的修改及保存</h2><p>1.<strong>进入容器</strong>：<code>docker exec -it container_name/container_id /bin/bash</code></p>
+<p>2.<strong>退出容器</strong>：<code>exit</code></p>
 <p>3.<strong>提交修改</strong>：</p>
-<p>docker commit -a “author” -m “message” container_name/container_id new_image_name:tag_name</p>
-<p>参数说明</p>
+<pre><code>docker commit -a &quot;author&quot; -m &quot;message&quot; container_name/container_id new_image_name:tag_name</code></pre><p>参数说明</p>
 <pre><code>-a：参数可选，用于指定作者，可以写你的名字
 -m：参数可选，提交信息，可以说一下你做了哪些修改
 container_id：该参数为被修改的容器ID
@@ -344,7 +343,7 @@ tag_name：此为新镜像的标签，可不写，不写时标签默认为latest
 <p><code>docker cp</code>/宿主机目录/文件名 容器名:/容器目录/文件名<br>容器互联</p>
 <p><code>docker run -itd --link</code> 要关联的容器名字:容器在被关联的容器中的别名</p>
 <p>修改mysql密码</p>
-<pre><code>ALTER USER &apos;root&apos;@&apos;%&apos; IDENTIFIED WITH mysql_native_password BY &apos;123456&apos;;</code></pre><h1 id="Dockerfile小概"><a href="#Dockerfile小概" class="headerlink" title="Dockerfile小概"></a>Dockerfile小概</h1><p><strong>Dockerfile就是名为Dockerfile的文件，文件中包含一些Linux命令，Docker通过读取文件中的命令来组建镜像。</strong></p>
+<pre><code>ALTER USER &apos;root&apos;@&apos;%&apos; IDENTIFIED WITH mysql_native_password BY &apos;123456&apos;;</code></pre><h1 id="4-Dockerfile小概"><a href="#4-Dockerfile小概" class="headerlink" title="4. Dockerfile小概"></a>4. Dockerfile小概</h1><p><strong>Dockerfile就是名为Dockerfile的文件，文件中包含一些Linux命令，Docker通过读取文件中的命令来组建镜像。</strong></p>
 <p>使用 Docker 中的docker image build命令会读取 Dockerfile，并将应用程序容器化。</p>
 <p>Dockerfile 由一行行命令语句组成，并支持以 # 开头的注释行。</p>
 <p>构建上下文是指应用文件存放的位置，可能是本地 Docker 主机上的一个目录或一个远程的 Git 库。</p>
@@ -359,14 +358,14 @@ Dockerfile 中的 EXPOSE 指令用于记录应用所使用的网络端口。
 Dockerfile 中的 ENTRYPOINT 指令用于指定镜像以容器方式启动后默认运行的程序。
 
 其他的 Dockerfile 指令还有 LABEL、ENV、ONBUILD、HEALTHCHECK、CMD 等。</code></pre><p><strong>Dockerfile 一般分为四部分：基础镜像信息、维护者信息、镜像操作指令和容器启动时执行指令，# 为 Dockerfile 中的注释。</strong></p>
-<h1 id="Docker-Compose"><a href="#Docker-Compose" class="headerlink" title="Docker-Compose"></a>Docker-Compose</h1><p>Docker Compose 并不是通过脚本和各种冗长的 docker 命令来将应用组件组织起来，而是通过一个声明式的配置文件描述整个应用，从而使用一条命令完成部署。</p>
+<h1 id="5-Docker-Compose"><a href="#5-Docker-Compose" class="headerlink" title="5. Docker-Compose"></a>5. Docker-Compose</h1><p>Docker Compose 并不是通过脚本和各种冗长的 docker 命令来将应用组件组织起来，而是通过一个声明式的配置文件描述整个应用，从而使用一条命令完成部署。</p>
 <p>应用部署成功后，还可以通过一系列简单的命令实现对其完整声明周期的管理。甚至，配置文件还可以置于版本控制系统中进行存储和管理。</p>
 <p>docker使用只到了这，不知道算不算入门了。实践中学到更多再来补充</p>
 <p>2020/9/12 星期六 12:12:18 </p>
-<h1 id="搭建PHP开发环境"><a href="#搭建PHP开发环境" class="headerlink" title="搭建PHP开发环境"></a>搭建PHP开发环境</h1><p><strong>1.下载nginx、php:7.2-fpm、mysql镜像</strong></p>
+<h1 id="6-搭建PHP开发环境"><a href="#6-搭建PHP开发环境" class="headerlink" title="6. 搭建PHP开发环境"></a>6. 搭建PHP开发环境</h1><p><strong>1.下载nginx、php:7.2-fpm、mysql镜像</strong></p>
 <p><strong>2.启动mysql容器：</strong></p>
 <pre><code>docker run -itd -v /宿主机/目录/mysql:/var/lib/mysql -p 33066:3306 --name=mysql -e MYSQL_ROOT_PASSWORD
-=password mysql</code></pre><p>**<br>3.构建php72-fpm镜像**</p>
+=password mysql</code></pre><p><strong>3.构建php72-fpm镜像</strong></p>
 <pre><code>FROM php:7.2-fpm
 
 RUN docker-php-ext-install pdo_mysql</code></pre><p><strong>4.启动php容器：</strong></p>
