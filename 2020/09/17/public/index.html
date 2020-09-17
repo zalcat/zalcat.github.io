@@ -13,7 +13,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
   <title>
     
-      大学生创新科研项目结项记录 | 晓不是小
+      public | 晓不是小
     
   </title>
   <meta name="author" content="Jonathan">
@@ -101,7 +101,7 @@
 	<!-- Page title -->
 	<p>
 		
-			「大学生创新科研项目结项记录」
+			「public」
 		
 	</p>
 
@@ -228,27 +228,14 @@
 		插件作者：KELEN
 		插件来源: https://github.com/KELEN/katelog
 -->
-
-	
-		<div class="layout-toc">
-			<div id="layout-toc">
-				<div class="k-catelog-list" id="catelog-list" data-title="文章目录"></div>
-			</div>
-		</div>
-
-		
-<script src="/plugin/toc/katelog.min.js"></script>
-
-
-		
 	 
 
 <div class="layout-post">
 	<div id="layout-post">
 		<div class="article-title">
 			
-	<a href="/2020/06/17/%E5%A4%A7%E5%AD%A6%E7%94%9F%E5%88%9B%E6%96%B0%E7%A7%91%E7%A0%94%E9%A1%B9%E7%9B%AE%E8%AE%B0%E5%BD%95(%E4%B8%80)/" itemprop="url">
-		大学生创新科研项目结项记录
+	<a href="/2020/09/17/public/" itemprop="url">
+		public
 	</a>
 
 		</div>
@@ -264,9 +251,9 @@
 
 	更新于
 
-	<a href="/2020/06/17/%E5%A4%A7%E5%AD%A6%E7%94%9F%E5%88%9B%E6%96%B0%E7%A7%91%E7%A0%94%E9%A1%B9%E7%9B%AE%E8%AE%B0%E5%BD%95(%E4%B8%80)/" itemprop="url">
-		<time datetime="2020-06-17T07:19:10.000Z" itemprop="dateUpdated">
-	  		2020-08-25
+	<a href="/2020/09/17/public/" itemprop="url">
+		<time datetime="2020-09-17T04:20:24.000Z" itemprop="dateUpdated">
+	  		2020-09-17
 	  </time>
 	</a> 
 
@@ -274,14 +261,7 @@
 
 			</span>
 			<span>
-				
-	<i class="icon-price-tags"></i>
-	
-		<a href="/tags/%E8%AE%B0%E5%BD%95/" class=" ">
-			记录
-		</a>
-	
-		
+						
 			</span>
 			
 			
@@ -291,35 +271,7 @@
 		</div>
 
 		<div class="article-content" id="article-content">
-			<p>2020.6月</p>
-<p>项目是搭建网络安全学习平台，年后尝试搭建了各种平台，主要还是基于ctf的比赛平台，在尝试搭建H1ve美化过的ctfd时一直失败，便停了一段时间。</p>
-<pre><code>https://github.com/D0g3-Lab/H1ve</code></pre><p>期间也尝试用闲置的服务器搭建个人博客，不过最后选在GitHub上创建了现在的博客，很大程度因为喜欢现在的博客主题吧。</p>
-<p>现在一晃从3月到了6月，觉得项目得有些进度了，之前的许多尝试得有些成果，基于之前尝试时，在云服务器上搭建比赛平台，只要失败报错，很可能就要重置系统或者恢复快照，所以这次准备稳扎稳打，总结之前的经验教训，每搭建一部分就做好快照，如果觉得这部分成熟了，再删掉。</p>
-<p>根据项目内容主要分为两部分，第一部分是网络安全的入门学习平台，准备搭建<strong>docker-pikachu</strong>作为学习平台，后期也以ctfd作为进阶的练习平台和校内比赛平台，第二部分是有关内网的，这部分不在此记录。</p>
-<hr>
-<h2 id="1-简介"><a href="#1-简介" class="headerlink" title="1.简介"></a>1.简介</h2><blockquote>
-<p>Pikachu是一个带有漏洞的Web应用系统，基本包含了常见的web安全漏洞。</p>
-</blockquote>
-<h2 id="2-下载pikachu文件地址如下"><a href="#2-下载pikachu文件地址如下" class="headerlink" title="2.下载pikachu文件地址如下"></a>2.下载pikachu文件地址如下</h2><pre><code>git clone https://github.com/zhuifengshaonianhanlu/pikachu</code></pre><h2 id="3-利用docker把pikachu搭建起来步骤如下"><a href="#3-利用docker把pikachu搭建起来步骤如下" class="headerlink" title="3.利用docker把pikachu搭建起来步骤如下"></a>3.利用docker把pikachu搭建起来步骤如下</h2><pre><code>使用 Dockerfile 创建镜像
-
-    docker build -t pikachu .</code></pre><p>使用当前目录dockerfile 创建镜像，命为 pikachu。（要和Dockerfile在同一目录，注意命令后面还有一个点）</p>
-<pre><code>`docker images`</code></pre><p><img src="https://zalcat.oss-cn-hangzhou.aliyuncs.com/blog/20200617165228.png" alt=""></p>
-<h2 id="4-启动容器pikachu"><a href="#4-启动容器pikachu" class="headerlink" title="4.启动容器pikachu"></a>4.启动容器pikachu</h2><pre><code>docker run -it -d -p 7071:80 c877d42ce288</code></pre><p>根据以往的经验教训这里一般不用8082，我换成了7071.</p>
-<p>注意服务器相应的端口防火墙要打开。就可以访问了。</p>
-<p><strong>此时要做的时配置数据库信息，因为使用docker搭建的所以要进容器里面去改，并且xss有一个后台也要配置文件连接数据库</strong></p>
-<h2 id="5-进入容器修改配置文件连接mysql数据库"><a href="#5-进入容器修改配置文件连接mysql数据库" class="headerlink" title="5. 进入容器修改配置文件连接mysql数据库"></a>5. 进入容器修改配置文件连接mysql数据库</h2><pre><code>`docker exec -it fe5e1a289bcc /bin/bash`
-
-cd app/inc/ &amp;&amp; vim config.inc.php</code></pre><h2 id="修改后重启容器"><a href="#修改后重启容器" class="headerlink" title="- 修改后重启容器"></a>- 修改后重启容器</h2><pre><code>`docker restart fe5e1a289bc`</code></pre><ul>
-<li><p>Pikachu有一个xss后台，也需要配置文件连接数据库步骤都一样</p>
-<p>  <code>cd app/pkxss/inc &amp;&amp; vim config.inc.php</code></p>
-</li>
-</ul>
-<p><img src="https://zalcat.oss-cn-hangzhou.aliyuncs.com/blog/20200617171153.png" alt=""></p>
-<hr>
-<p>因为要用到数据库mysql，我用小皮面板来安装MySQL</p>
-<p><code>wget -O install.sh https://download.xp.cn/install.sh &amp;&amp; sudo bash install.sh</code></p>
-<h2 id="6-生成镜像方便使用"><a href="#6-生成镜像方便使用" class="headerlink" title="6.生成镜像方便使用"></a>6.生成镜像方便使用</h2><p>我在安装前对pikaqu的前端进行了一点修改，并且我希望这个配置的皮卡丘能更方便使用，所以在最后将其push到阿里云镜像仓库了</p>
-	
+				
 		</div>
 		
 		<div id="current-post-cover" data-scr="/img/cart_cover.jpg"></div>
@@ -337,12 +289,8 @@ cd app/inc/ &amp;&amp; vim config.inc.php</code></pre><h2 id="修改后重启容
 	<span>
 		<a id="totop-post-page">返回顶部</a>
 		
-			<a href="/2020/07/07/%E5%9F%BA%E4%BA%8ELayUI%E7%9A%84%E6%96%B0%E9%97%BB%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" title="基于LayUI的新闻管理系统" rel="prev">
-				&laquo;上一篇
-			</a>
 		
-		
-			<a href="/2020/06/13/Docker%E5%AE%9E%E8%B7%B5%E6%80%BB%E7%BB%93/" title="Docker实践总结" rel="next">
+			<a href="/2020/09/12/sub/" title="sub" rel="next">
 				下一篇&raquo;
 			</a>
 			
@@ -360,6 +308,28 @@ cd app/inc/ &amp;&amp; vim config.inc.php</code></pre><h2 id="修改后重启容
 <div class="relate-post">
 	
 		<ul>
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2020/09/12/sub/" title="sub">
+								sub			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								九月 12日, 2020				
+							</p>
+							<p class="relate-post-content">
+								
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2020/09/12/sub/" title="sub">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/cart_cover.jpg" alt="sub"/>
+							</a>
+						</div>
+					</li>												
 			
 					<li>
 						<div class="relate-post-text">
@@ -415,6 +385,30 @@ cd app/inc/ &amp;&amp; vim config.inc.php</code></pre><h2 id="修改后重启容
 			
 					<li>
 						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2020/06/17/%E5%A4%A7%E5%AD%A6%E7%94%9F%E5%88%9B%E6%96%B0%E7%A7%91%E7%A0%94%E9%A1%B9%E7%9B%AE%E8%AE%B0%E5%BD%95(%E4%B8%80)/" title="大学生创新科研项目结项记录">
+								大学生创新科研项目结项记录			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								六月 17日, 2020				
+							</p>
+							<p class="relate-post-content">
+								2020.6月
+项目是搭建网络安全学习平台，年后尝试搭建了各种平台，主要还是基于ctf的比赛平台，在尝试搭建H1ve美化过的ctfd时一直失败，便停了一段时间。
+https://github.com/D0g3-Lab/H1ve期间也尝...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2020/06/17/%E5%A4%A7%E5%AD%A6%E7%94%9F%E5%88%9B%E6%96%B0%E7%A7%91%E7%A0%94%E9%A1%B9%E7%9B%AE%E8%AE%B0%E5%BD%95(%E4%B8%80)/" title="大学生创新科研项目结项记录">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/cart_cover.jpg" alt="大学生创新科研项目结项记录"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
 							<a class="relate-post-title" href="/2020/06/13/Docker%E5%AE%9E%E8%B7%B5%E6%80%BB%E7%BB%93/" title="Docker实践总结">
 								Docker实践总结			
 							</a>
@@ -435,107 +429,6 @@ docker容器仓库：https:/...
 							<a href="/2020/06/13/Docker%E5%AE%9E%E8%B7%B5%E6%80%BB%E7%BB%93/" title="Docker实践总结">				
 								
 								<img class="lazy" src="/img/lazy.gif" data-src="/img/cart_cover.jpg" alt="Docker实践总结"/>
-							</a>
-						</div>
-					</li>												
-			
-					<li>
-						<div class="relate-post-text">
-							<a class="relate-post-title" href="/2020/03/02/ctfhub/" title="ctfhub">
-								ctfhub			
-							</a>
-							<p class="relate-post-date">
-								<i class="fa fa-calendar"></i>
-								三月 2日, 2020				
-							</p>
-							<p class="relate-post-content">
-								
-
-CTFHub专注信息安全竞赛，拥有完善的题目环境及配套Writeup。清晰的学习路线可以快速帮助新手成长，降低CTF准入门槛。经典的题目再现，帮助选手磨练技艺。紧跟主流比赛潮流，实时同步赛事信息，不漏过任何一个关键比赛。
-
-小记：...
-							</p>
-						</div>
-
-						<div class="relate-post-cover">
-							<a href="/2020/03/02/ctfhub/" title="ctfhub">				
-								
-								<img class="lazy" src="/img/lazy.gif" data-src="/img/cart_cover.jpg" alt="ctfhub"/>
-							</a>
-						</div>
-					</li>												
-			
-					<li>
-						<div class="relate-post-text">
-							<a class="relate-post-title" href="/2020/02/27/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/" title="博客搭建记录">
-								博客搭建记录			
-							</a>
-							<p class="relate-post-date">
-								<i class="fa fa-calendar"></i>
-								二月 27日, 2020				
-							</p>
-							<p class="relate-post-content">
-								
-
-
-&emsp;起因我在csdn写了博客1年多了，翻找自己以前的文章发现几个问题
-
-内容杂乱不成体系
-深度不够
-长篇幅文章不合适
-
-简单来说，自己想提升一点，用新的博客重新开始记录，csdn当然还会用，只是考虑到自己要记录一些内网相...
-							</p>
-						</div>
-
-						<div class="relate-post-cover">
-							<a href="/2020/02/27/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/" title="博客搭建记录">				
-								
-								<img class="lazy" src="/img/lazy.gif" data-src="/img/cart_cover.jpg" alt="博客搭建记录"/>
-							</a>
-						</div>
-					</li>												
-			
-					<li>
-						<div class="relate-post-text">
-							<a class="relate-post-title" href="/2020/09/17/public/" title="public">
-								public			
-							</a>
-							<p class="relate-post-date">
-								<i class="fa fa-calendar"></i>
-								九月 17日, 2020				
-							</p>
-							<p class="relate-post-content">
-								
-							</p>
-						</div>
-
-						<div class="relate-post-cover">
-							<a href="/2020/09/17/public/" title="public">				
-								
-								<img class="lazy" src="/img/lazy.gif" data-src="/img/cart_cover.jpg" alt="public"/>
-							</a>
-						</div>
-					</li>												
-			
-					<li>
-						<div class="relate-post-text">
-							<a class="relate-post-title" href="/2020/09/12/sub/" title="sub">
-								sub			
-							</a>
-							<p class="relate-post-date">
-								<i class="fa fa-calendar"></i>
-								九月 12日, 2020				
-							</p>
-							<p class="relate-post-content">
-								
-							</p>
-						</div>
-
-						<div class="relate-post-cover">
-							<a href="/2020/09/12/sub/" title="sub">				
-								
-								<img class="lazy" src="/img/lazy.gif" data-src="/img/cart_cover.jpg" alt="sub"/>
 							</a>
 						</div>
 					</li>												
@@ -572,6 +465,32 @@ CTFHub专注信息安全竞赛，拥有完善的题目环境及配套Writeup。�
 			
 					<li>
 						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2020/03/02/ctfhub/" title="ctfhub">
+								ctfhub			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								三月 2日, 2020				
+							</p>
+							<p class="relate-post-content">
+								
+
+CTFHub专注信息安全竞赛，拥有完善的题目环境及配套Writeup。清晰的学习路线可以快速帮助新手成长，降低CTF准入门槛。经典的题目再现，帮助选手磨练技艺。紧跟主流比赛潮流，实时同步赛事信息，不漏过任何一个关键比赛。
+
+小记：...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2020/03/02/ctfhub/" title="ctfhub">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/cart_cover.jpg" alt="ctfhub"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
 							<a class="relate-post-title" href="/2020/02/29/python-flask-ssti/" title="python-flask(ssti)">
 								python-flask(ssti)			
 							</a>
@@ -595,6 +514,37 @@ CTFHub专注信息安全竞赛，拥有完善的题目环境及配套Writeup。�
 							<a href="/2020/02/29/python-flask-ssti/" title="python-flask(ssti)">				
 								
 								<img class="lazy" src="/img/lazy.gif" data-src="/img/cart_cover.jpg" alt="python-flask(ssti)"/>
+							</a>
+						</div>
+					</li>												
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2020/02/27/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/" title="博客搭建记录">
+								博客搭建记录			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								二月 27日, 2020				
+							</p>
+							<p class="relate-post-content">
+								
+
+
+&emsp;起因我在csdn写了博客1年多了，翻找自己以前的文章发现几个问题
+
+内容杂乱不成体系
+深度不够
+长篇幅文章不合适
+
+简单来说，自己想提升一点，用新的博客重新开始记录，csdn当然还会用，只是考虑到自己要记录一些内网相...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2020/02/27/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/" title="博客搭建记录">				
+								
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/cart_cover.jpg" alt="博客搭建记录"/>
 							</a>
 						</div>
 					</li>												
